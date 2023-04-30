@@ -38,26 +38,51 @@
     margin-bottom: 5px;
     margin-left: 6px;
     margin-right: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .opBtn {
-    flex: 1 2 auto;
+    flex: 1 2 20%;
     background-color: blue;
     border-radius: 10%;
     margin-top: 5px;
     margin-bottom: 5px;
     margin-left: 6px;
     margin-right: 5px;
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .zeroBtn {
-    flex: 2 1 48%;
-    background-color: blue;
+    flex: 1 1 47%;
+    background-color: green;
     border-radius: 10%;
     margin-top: 5px;
     margin-bottom: 5px;
     margin-left: 6px;
     margin-right: 5px;
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.numBtn {
+    flex: 1 2 20%;
+    background-color: green;
+    border-radius: 10%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 6px;
+    margin-right: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btnText {
+    margin: 0;
+    z-index: 2;
 }
