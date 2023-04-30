@@ -1,5 +1,5 @@
 #calcBody {
-    height: 530px;
+    height: 600px;
     width: 420px;
     background-color: black;
     display: flex;
@@ -10,7 +10,8 @@
    width: 95%;
    height: 20%;
    margin: 10px;
-   background-color: white; 
+   background-color: grey;
+   border: 1px solid white; 
    display: flex;
    justify-content: flex-end;
    align-items: center;
@@ -18,4 +19,45 @@
 
 #displayText {
     font-size: 70px;
+}
+
+#buttonDiv {
+    width: 95%;
+    height: 72%;
+    background-color: white;
+    align-self: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.actionBtn{
+    flex: 1 2 20%;
+    background-color: red;
+    border-radius: 10%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 6px;
+    margin-right: 5px;
+}
+
+.opBtn {
+    flex: 1 2 auto;
+    background-color: blue;
+    border-radius: 10%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 6px;
+    margin-right: 5px;
+    
+}
+
+.zeroBtn {
+    flex: 2 1 48%;
+    background-color: blue;
+    border-radius: 10%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 6px;
+    margin-right: 5px;
+    
 }
