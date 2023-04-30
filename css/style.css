@@ -1,0 +1,21 @@
+#calcBody {
+    height: 530px;
+    width: 420px;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+}
+
+#displayDiv {
+   width: 95%;
+   height: 20%;
+   margin: 10px;
+   background-color: white; 
+   display: flex;
+   justify-content: flex-end;
+   align-items: center;
+}
+
+#displayText {
+    font-size: 70px;
+}
