@@ -4,7 +4,10 @@ let previousOperand = null;
 let operator = null;
 
 function add(num1, num2) {
-    return num2 = num1 + num2;
+    let numA = parseInt(num1);
+    let numB = parseInt(num2);
+    let total = numA + numB;
+    return total;
 }
 
 function subtract(num1, num2) {
@@ -21,10 +24,10 @@ function divide(num1, num2) {
 
 function displayUpdate() {
     let display = document.querySelector('#displayText');
-    if(displayValue.length < 12) {
+    if(displayValue.length < 11) {
         display.innerText = displayValue;
     }
-    else if(displayValue.length >= 12) {
+    else if(displayValue.length >= 11) {
         let subString = displayValue.substring(0, 11);
         display.innerText = subString;
     }
