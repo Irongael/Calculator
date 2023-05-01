@@ -4,35 +4,62 @@ let previousOperand = null;
 let operator = null;
 
 function add(num1, num2) {
-    let numA = parseInt(num1);
-    let numB = parseInt(num2);
-    let total = numA + numB;
+    let numA = 0;
+    let numB = 0;
+    let total = 0;
+    
+    if(((num1 > Math.floor(num1)) || (num2 > Math.floor(num2)))) {
+        numA = parseFloat(num1);
+        numB = parseFloat(num2);
+        total = numA + numB;
+    }
+    else {
+        numA = parseInt(num1);
+        numB = parseInt(num2);
+        total = numA + numB;
+    }
+    
     return total;
 }
 
 function subtract(num1, num2) {
-    return num2 = num1 - num2;
+    let total = num1 - num2;
+    return total;
 }
 
 function multiply(num1, num2) {
-    return num2 = num1 * num2;
+    let total = num1 * num2;
+    return total;
 }
 
 function divide(num1, num2) {
-    return num2 = num1 / num2;
+    let total = 0;
+    
+    if(num1 == 0) {
+        console.log('cannot divide by zero');
+        displayValue = "divide 0 Error";
+        displayUpdate();
+    }
+    else {
+        total = num1 / num2;
+        return total;
+    }
 }
 
 function displayUpdate() {
     let display = document.querySelector('#displayText');
     if(displayValue.length < 11) {
         display.innerText = displayValue;
+        console.log(displayValue.length);
     }
     else if(displayValue.length >= 11) {
         let subString = displayValue.substring(0, 11);
         display.innerText = subString;
+        console.log(displayValue.length);
     }
     else {
         display.innerText = displayValue;
+        console.log(displayValue.length);
     }
 }
 
@@ -179,8 +206,11 @@ function btnInput(input) {
     else if(input == '=') {
         operate(currentOperand, previousOperand, operator);
     }
-    else {
-        //make decimal point support later.
+    else if(input == '.'){
+        if(!(currentOperand == null)) {
+            currentOperand = currentOperand + '.';
+            displayValue = displayValue + '.';
+        }
     }
     displayUpdate();
 }
@@ -295,6 +325,11 @@ plusBtn.addEventListener('click', () => {
 const zeroBtn = document.querySelector('#zero');
 zeroBtn.addEventListener('click', () => {
     btnInput('0');
+});
+
+const decimalBtn = document.querySelector('#decimal');
+decimalBtn.addEventListener('click', () => {
+    btnInput('.');
 });
 
 const equalBtn = document.querySelector('#equal');
