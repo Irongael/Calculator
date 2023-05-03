@@ -11,7 +11,7 @@ function add(num1, num2) {
     if(((num1 > Math.floor(num1)) || (num2 > Math.floor(num2)))) {
         numA = parseFloat(num1);
         numB = parseFloat(num2);
-        total = numA + numB;
+        total = ((numA * 10) + (numB * 10)) / 10;
     }
     else {
         numA = parseInt(num1);
@@ -83,7 +83,6 @@ function btnInput(input) {
         operator = '/';
         previousOperand = currentOperand;
         currentOperand = null;
-        displayValue = '0';
     }
     else if(input == '7') {
         if(currentOperand == null) {
@@ -119,7 +118,6 @@ function btnInput(input) {
         operator = '*';
         previousOperand = currentOperand;
         currentOperand = null;
-        displayValue = '0';
     }
     else if(input == '4') {
         if(currentOperand == null) {
@@ -155,7 +153,6 @@ function btnInput(input) {
         operator = '-';
         previousOperand = currentOperand;
         currentOperand = null;
-        displayValue = '0';
     }
     else if(input == '1') {
         if(currentOperand == null) {
@@ -191,7 +188,6 @@ function btnInput(input) {
         operator = '+';
         previousOperand = currentOperand;
         currentOperand = null;
-        displayValue = '0';
     }
     else if(input == '0') {
         if(currentOperand == null) {
