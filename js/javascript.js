@@ -73,7 +73,7 @@ function btnInput(input) {
     }
     else if(input == '+/-') {
         displayValue = displayValue * -1;
-        currentOperand = displayValue * -1;
+        currentOperand = currentOperand * -1;
     }
     else if(input == '%') {
         displayValue = displayValue * 0.01;
