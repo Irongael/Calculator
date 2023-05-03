@@ -8,9 +8,11 @@ function add(num1, num2) {
     let numB = 0;
     let total = 0;
     
+    //if the number contains a decimal parse to float if not parse to Int
     if(((num1 > Math.floor(num1)) || (num2 > Math.floor(num2)))) {
         numA = parseFloat(num1);
         numB = parseFloat(num2);
+        //tries to help solve floating point issues
         total = ((numA * 10) + (numB * 10)) / 10;
     }
     else {
@@ -24,12 +26,12 @@ function add(num1, num2) {
 
 function subtract(num1, num2) {
     let total = num1 - num2;
-    return total;
+    return roundNum(total);
 }
 
 function multiply(num1, num2) {
     let total = num1 * num2;
-    return total;
+    return roundNum(total);
 }
 
 function divide(num1, num2) {
@@ -37,12 +39,12 @@ function divide(num1, num2) {
     
     if(num1 == 0) {
         console.log('cannot divide by zero');
-        displayValue = "divide 0 Error";
+        displayValue = "Divide 0 Error";
         displayUpdate();
     }
     else {
         total = num1 / num2;
-        return total;
+        return roundNum(total);
     }
 }
 
@@ -66,6 +68,7 @@ function displayUpdate() {
 displayUpdate();
 
 function btnInput(input) {
+    //function to determine what button pushes will do to our variables
     if(input == 'AC') {
         displayValue = '0';
         currentOperand = null;
@@ -212,6 +215,7 @@ function btnInput(input) {
 }
 
 function operate(current, previous, op) {
+    //function to use our math functions based on the buttons pushed by user
     if((current == null ) || (previous == null) || op == null) {
         //do nothing since we lack all the proper input
     }
@@ -238,6 +242,11 @@ function operate(current, previous, op) {
     displayUpdate();
 }
 
+function roundNum(num) {
+    return Math.round(num * 1000) / 1000;
+}
+
+//eventlisteners for each of our calculator's buttons
 const acBtn = document.querySelector('#clear');
 acBtn.addEventListener('click', () => {
     btnInput('AC');
